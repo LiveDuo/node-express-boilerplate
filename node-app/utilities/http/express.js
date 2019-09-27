@@ -11,6 +11,6 @@ app.use(logger)
 app.use(bodyParser)
 
 // console.log("hello")
-const listen = () => app.listen(config.defaultPort, () => console.log(`Example app listening on port ${config.defaultPort}!`))
+const listen = () => app.listen(config.defaultPort, () => console.log(`Express listening on port ${config.defaultPort}!`))
 
 export { listen }
