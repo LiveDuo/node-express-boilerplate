@@ -10,4 +10,4 @@ const configEnvs = {
 }
 
 const config = configEnvs[env]
-module.exports = { config }
+export { config }

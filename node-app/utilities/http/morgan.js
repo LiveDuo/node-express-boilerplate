@@ -1,4 +1,4 @@
-const morgan = require('morgan')
+import morgan from 'morgan'
 
 const logger = morgan('combined')
-module.exports = { logger }
+export { logger }
