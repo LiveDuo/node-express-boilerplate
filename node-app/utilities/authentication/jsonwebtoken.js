@@ -1,2 +1,2 @@
-import { sign } from 'jsonwebtoken'
-export { sign }
+import { sign, verify } from 'jsonwebtoken'
+export { sign, verify }

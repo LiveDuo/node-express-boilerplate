@@ -23,4 +23,4 @@ app.use('/users', usersRouter)
 
 app.use(notFound)
 
-export { listen }
+export { listen, app }
