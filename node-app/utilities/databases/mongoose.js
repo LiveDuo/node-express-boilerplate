@@ -8,9 +8,9 @@ const options = { useNewUrlParser: true, useUnifiedTopology: true, useCreateInde
 let mongoDb
 
 const connect = async () => {
-    let res = await mongoose.connect(process.env.MONGO_URL, options)
-    console.log('Mongoose connected!')
-    return res
+	let res = await mongoose.connect(process.env.MONGO_URL, options)
+	console.log('Mongoose connected!')
+	return res
 }
 
 export { connect, mongoDb }
