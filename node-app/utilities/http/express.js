@@ -6,6 +6,8 @@ import { parser, json } from './bodyParser'
 import { locale } from '../locale/i18n'
 import { config } from '../../config/config'
 
+import { notFound } from '../../controllers/errors/notFound'
+
 const app = express()
 
 app.use(logger)
@@ -13,7 +15,6 @@ app.use(locale)
 app.use(parser)
 app.use(json)
 
-// console.log("hello")
-const listen = () => app.listen(config.defaultPort, () => console.log(`Express listening on port ${config.defaultPort}!`))
+app.use(notFound)
 
 export { listen }
