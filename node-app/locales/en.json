@@ -1,5 +1,7 @@
 {
 	"responses": {
-		"invalid_request": "Invalid data"
+		"invalid_request": "Invalid data",
+		"something_went_wrong": "Something went wrong",
+		"not_authorized": "Not authorized"
 	}
 }
