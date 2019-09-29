@@ -1,9 +1,12 @@
 import mongo from 'mongodb'
 
+const mongoClient = mongo.MongoClient
 // user: process.env.MONGO_USER,
 // pass: process.env.MONGO_PASSWORD,
 
 const options = { useNewUrlParser: true, useUnifiedTopology: true }
+
+let mongoDb
 
 const onConnect = (err, client) => {
     if (err) {
@@ -20,8 +23,9 @@ const onConnect = (err, client) => {
 const connect = () => {
     return new Promise((resolve, reject) => {
         setImmediate(() => {
-            mongo.connect(process.env.MONGO_URL, options, (err, client) => {
+            mongoClient.connect(process.env.MONGO_URL, options, (err, client) => {
                 console.log('Mongo connected!')
+                mongoDb = client.db()//.collection('users').insertOne({text: 'hello world'})
                 resolve(client)
             })
         })
@@ -29,4 +33,4 @@ const connect = () => {
 }
 
 // export const mongoClient = mongo.MongoClient
-export { connect }
+export { connect, mongoDb }
