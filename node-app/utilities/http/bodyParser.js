@@ -1,3 +1,4 @@
-const bodyParser = require('body-parser')
+import bodyParser from 'body-parser'
 
-export { bodyParser }
+export const parser = bodyParser.urlencoded({ extended: true })
+export const json = bodyParser.json()
