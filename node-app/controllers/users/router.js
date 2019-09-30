@@ -10,7 +10,7 @@ const router = express.Router()
 
 router.get('/:userId', getUser)
 router.post('/login', loginUser)
-router.post('/create', createUser)
-router.post('/delete', verifyToken, deleteUser)
+router.put('/create', createUser)
+router.delete('/delete', verifyToken, deleteUser)
 
 export { router }

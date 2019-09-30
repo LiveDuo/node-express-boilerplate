@@ -19,12 +19,12 @@ describe('Delete users controller', () => {
 			favorites: []
 		}
 
-		const res = await request(app).post('/users/create').send(mockUser).set('Accept', 'application/json')
+		const res = await request(app).put('/users/create').send(mockUser).set('Accept', 'application/json')
 
 		expect(res.statusCode).toEqual(HttpStatusCodes.OK)
 
 		let token = res.body.jwt
-		const res2 = await request(app).post('/users/delete').set('Accept', 'application/json').set('Authorization', `Bearer ${token}`)
+		const res2 = await request(app).delete('/users/delete').set('Accept', 'application/json').set('Authorization', `Bearer ${token}`)
 
 		expect(res2.statusCode).toEqual(HttpStatusCodes.OK)
 	})
