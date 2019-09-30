@@ -5,11 +5,11 @@ import { getCachedThenQuery } from '../../services/caching/nodeCache'
 
 const getUser = async (req, res) => {
 
-	let userId = req.params.userId
-	let promise = UserModel.findById(userId)
+	const userId = req.params.userId
+	const promise = UserModel.findById(userId)
 
 	try {
-		const result = await getCachedThenQuery('get-user'-userId, promise)
+		const result = await getCachedThenQuery('get-user-id-'-userId, promise)
 		if (result) {
 			result.password = undefined // maybe a bad idea
 			return res.status(HttpStatusCodes.OK).send(result)
