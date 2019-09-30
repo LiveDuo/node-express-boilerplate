@@ -1,8 +1,8 @@
 import 'dotenv/config'
 
-import { listen  } from './utilities/http/express'
-import { connect } from './utilities/databases/mongoose'
-import { configure } from './utilities/locale/i18n'
+import { listen  } from './services/http/express'
+import { connect } from './services/databases/mongoose'
+import { configure } from './services/locale/i18n'
 
 configure()
 

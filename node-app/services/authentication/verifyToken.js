@@ -1,5 +1,5 @@
-import { HttpStatusCodes } from '../../utilities/http/httpStatusCodes'
-import { verify } from '../../utilities/authentication/jsonwebtoken'
+import { HttpStatusCodes } from 'http-status-codes'
+import { verify } from 'jsonwebtoken'
 
 const verifyToken = async (req, res, next) => {
 	let authHeader = req.headers['authorization']

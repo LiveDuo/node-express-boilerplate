@@ -1,8 +1,8 @@
-import { HttpStatusCodes } from '../../utilities/http/httpStatusCodes'
+import { HttpStatusCodes } from 'http-status-codes'
 import request from 'supertest'
 
-import { app } from '../../utilities/http/express'
-import { verify } from '../../utilities/authentication/jsonwebtoken'
+import { app } from '../../services/http/express'
+import { verify } from 'jsonwebtoken'
 
 describe('Create User controller', () => {
 	it('should create a new user', async () => {

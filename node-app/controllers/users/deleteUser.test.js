@@ -1,7 +1,7 @@
-import { HttpStatusCodes } from '../../utilities/http/httpStatusCodes'
+import { HttpStatusCodes } from 'http-status-codes'
 import request from 'supertest'
 
-import { app } from '../../utilities/http/express'
+import { app } from '../../services/http/express'
 
 describe('Delete users controller', () => {
 	it('should create and delete a new user', async () => {

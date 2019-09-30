@@ -1,5 +1,5 @@
 import { UserModel } from '../../models/User/user'
-import { HttpStatusCodes } from '../../utilities/http/httpStatusCodes'
+import { HttpStatusCodes } from 'http-status-codes'
 
 const deleteUser = async (req, res) => {
 	try {

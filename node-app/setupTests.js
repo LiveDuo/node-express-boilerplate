@@ -1,7 +1,7 @@
 import 'dotenv/config'
 
-import { configure } from './utilities/locale/i18n'
-import { connect } from './utilities/databases/mongoose'
+import { configure } from './services/locale/i18n'
+import { connect } from './services/databases/mongoose'
 
 configure()
 

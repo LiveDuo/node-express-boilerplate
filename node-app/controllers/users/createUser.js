@@ -1,7 +1,7 @@
 import { UserModel } from '../../models/User/user'
-import { HttpStatusCodes } from '../../utilities/http/httpStatusCodes'
-import { sign } from '../../utilities/authentication/jsonwebtoken'
-import { hash } from '../../utilities/authentication/bcrypt'
+import { HttpStatusCodes } from 'http-status-codes'
+import { sign } from 'jsonwebtoken'
+import { hash } from 'bcrypt'
 
 const createUser = async (req, res) => {
 

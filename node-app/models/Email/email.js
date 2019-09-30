@@ -1,4 +1,4 @@
-import { validator } from '../../utilities/validation/validator'
+import validator from 'validator'
 
 const EmailSchema = {
 	type: String,

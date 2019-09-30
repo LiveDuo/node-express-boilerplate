@@ -3,8 +3,8 @@ import express from 'express'
 
 import { logger } from './morgan'
 import { parser, json } from './bodyParser'
-import { locale } from '../locale/i18n'
-import { config } from '../../config/config'
+import { locale } from '../../services/locale/i18n'
+import { config } from '../../services/globals/config'
 
 import { router as usersRouter } from '../../controllers/users/router'
 

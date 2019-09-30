@@ -1,4 +1,4 @@
-import { verifyToken } from '../../services/authentication/verify'
+import { verifyToken } from '../../services/authentication/verifyToken'
 import { createUser } from '../../controllers/users/createUser'
 import { deleteUser } from '../../controllers/users/deleteUser'
 
