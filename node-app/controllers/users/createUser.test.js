@@ -25,14 +25,20 @@ describe('Create User controller', () => {
 		expect(res.headers['content-type']).toMatch(/application\/json/)
 		expect(res.statusCode).toEqual(HttpStatusCodes.OK)
 
+		let token = res.body.jwt
+
 		let isValid = true
 		try {
-			verify(res.body.jwt, process.env.JWT_KEY)
+			verify(token, process.env.JWT_KEY)
 		} catch (error) {
 			isValid = false
 		}
 
 		expect(res.body).toHaveProperty('jwt')
 		expect(isValid).toBe(true)
+
+		const res2 = await request(app).post('/users/delete').set('Accept', 'application/json').set('Authorization', `Bearer ${token}`)
+
+		expect(res2.statusCode).toEqual(HttpStatusCodes.OK)
 	})
 })
