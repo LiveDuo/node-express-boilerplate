@@ -1,5 +1,6 @@
 import HttpStatusCodes from 'http-status-codes'
 import request from 'supertest'
+import { decode } from 'jsonwebtoken'
 
 import { app } from '../../services/http/express'
 
@@ -23,13 +24,12 @@ describe('Get users controller', () => {
 
 		expect(res.statusCode).toEqual(HttpStatusCodes.OK)
 
-		// how to get it dynamically??
-		let userId = '5d91de14c169071bc851b4cd'
-		const res3 = await request(app).get(`/users/${userId}`).set('Accept', 'application/json')
-
-		expect(res3.statusCode).toEqual(HttpStatusCodes.OK)
-
 		let token = res.body.jwt
+		let decodedToken = decode(res.body.jwt)
+		const res3 = await request(app).get(`/users/${decodedToken.id}`).set('Accept', 'application/json')
+		
+		expect(res3.statusCode).toEqual(HttpStatusCodes.OK)
+		
 		const res2 = await request(app).post('/users/delete').set('Accept', 'application/json').set('Authorization', `Bearer ${token}`)
 
 		expect(res2.statusCode).toEqual(HttpStatusCodes.OK)

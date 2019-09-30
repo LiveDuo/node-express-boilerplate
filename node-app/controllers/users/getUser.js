@@ -9,7 +9,7 @@ const getUser = async (req, res) => {
 	let promise = UserModel.findById(userId)
 
 	try {
-		const result = await getCachedThenQuery(userId, promise)
+		const result = await getCachedThenQuery('get-user'-userId, promise)
 		if (result) {
 			result.password = undefined // maybe a bad idea
 			return res.status(HttpStatusCodes.OK).send(result)
