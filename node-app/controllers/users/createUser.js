@@ -1,5 +1,5 @@
 import { UserModel } from '../../models/User/user'
-import { HttpStatusCodes } from 'http-status-codes'
+import HttpStatusCodes from 'http-status-codes'
 import { sign } from 'jsonwebtoken'
 import { hash } from 'bcrypt'
 
