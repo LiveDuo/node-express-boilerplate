@@ -1,2 +1,3 @@
 # NodeAssessment
-test
+npm install
+npm start
