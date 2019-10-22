@@ -6,7 +6,7 @@ import { parser, json } from './bodyParser'
 import { locale } from '../../services/locale/i18n'
 import { config } from '../../services/globals/config'
 
-import { router as usersRouter } from '../../controllers/users/router'
+import { router as usersRouter } from '../../controllers/router/express'
 
 import { notFound } from '../../controllers/errors/notFound'
 
