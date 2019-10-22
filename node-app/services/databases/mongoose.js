@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 // user: process.env.MONGO_USER,
 // pass: process.env.MONGO_PASSWORD,
 
-const options = { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }
+const options = { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false }
 
 let mongoDb
 
