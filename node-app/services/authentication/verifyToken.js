@@ -1,4 +1,4 @@
-import { HttpStatusCodes } from 'http-status-codes'
+import HttpStatusCodes from 'http-status-codes'
 import { verify } from 'jsonwebtoken'
 
 const verifyToken = async (req, res, next) => {
@@ -19,4 +19,10 @@ const verifyToken = async (req, res, next) => {
 	}
 }
 
-export { verifyToken }
+const verifyTokenWebSockets = async (authHeader) => {
+	let token = authHeader.split('---')[1]
+	let tokenDecoded = await verify(token, process.env.JWT_KEY)
+	return tokenDecoded
+}
+
+export { verifyToken, verifyTokenWebSockets }
